@@ -1,0 +1,27 @@
+#spinner:not([hidden]) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 60%;
+  left: 50%;
+}
+
+#spinner::after {
+  content: "";
+  width: 100px;
+  height: 100px;
+  border: 3px solid #f3f3fe ;
+  border-top: 4px solid #1d2d50;
+  border-radius: 100%;
+  animation: spin 700ms infinite linear
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

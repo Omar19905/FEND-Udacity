@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Test</title>
+</head>
+
+<body>
+<div hidden id="spinner"></div>
+<header>
+    <div>
+        Evaluate a news article with Natural Language Processing
+    </div>
+
+    <div>
+        <a href="#statement">By Statement</a>
+        <a href="#url">By URL</a>
+    </div>
+
+
+</header>
+
+<main>
+    <section>
+        <h1 class="type">Statement Analysis</h1>
+        <form>
+            <input required id="statement" type="text" name="input" value="" placeholder="Name">
+            <input id="s-button" type="submit" name="" value="submit" onclick="return Client.statementSubmit(event)">
+        </form>
+        <h2>Result:</h2>
+        <h3 id="s-classification">Classification: </h3>
+        <h3 id="s-subjectivity">Subjectivity: </h3>
+        <h3 id="s-Confidence">Confidence: </h3>
+        <h3 id="s-Irony">Irony: </h3>
+        <section>
+            <hr>
+            <hr>
+
+            <section>
+
+                <h1 class="type">URL Analysis</h1>
+                <form >
+                    <input required id="url" type="text" name="input" value="" placeholder="URL">
+                    <input id="url-button" type="submit" name="" value="submit" onclick="return Client.urlSubmit(event)">
+                </form>
+                <h2>Result:</h2>
+                <h3 id="u-classification">Classification: </h3>
+                <h3 id="u-subjectivity">Subjectivity: </h3>
+                <h3 id="u-confidence">Confidence: </h3>
+                <h3 id="u-irony">Irony: </h3>
+                <section>
+
+
+</main>
+
+<footer>
+    <p>©Omar 2020</p>
+</footer>
+
+<script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js');
+        });
+    }
+</script>
+</body>
+</html>
